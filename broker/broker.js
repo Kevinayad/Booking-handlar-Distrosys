@@ -15,10 +15,18 @@ client.on("connect", function() {
 
     const handlerTopic = topics.bookingHandlerTopic;
 
-    client.subscribe(handlerTopic);
-    console.log("Subscribed to: " + handlerTopic);
+    function subscribe(topic) {
+        client.subscribe(topic);
+        console.log("Subscribed to: " + topic);
+    }
 
-    client.publish(handlerTopic, 'Handle this: ...');
+    function publish(topic, message) {
+        client.publish(topic, message);
+    }
+
+    subscribe(handlerTopic);
+    
+    publish(handlerTopic, 'Handle this: ...');
 })
 
 client.on('message', function(topic, message) {
