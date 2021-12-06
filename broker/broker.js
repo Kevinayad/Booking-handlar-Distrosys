@@ -1,6 +1,8 @@
 const mqtt = require("mqtt");
 const topics = require("./topics");
-import { createAppointment } from './controllers/appointments.js';
+const handlerTopic = topics.bookingHandlerTopic;
+const GUITopic = topics.frontendTopic;
+const appointments = require ('../controllers/appointments.js');
 
 const localHost = 'mqtt://127.0.0.1'; // Local host
 const remoteHost = ''; // Remote host
@@ -30,13 +32,9 @@ const client = mqtt.connect(options.hostURL, options);
 
 function publish(topic, message) {
     client.publish(topic, message, { qos: 1, retain:false });
-
 }
 
 client.on("connect", function() {
-
-    const handlerTopic = topics.bookingHandlerTopic;
-    const GUITopic = topics.frontendTopic;
 
     function subscribe(topic) {
         client.subscribe(topic);
@@ -44,17 +42,14 @@ client.on("connect", function() {
     }
 
     subscribe(GUITopic);
-    subscribe(handlerTopic);
     
     publish(handlerTopic, 'Handle this: ...');
 })
 
 client.on('message', function(topic, message) {
     if (topic == topics.frontendTopic){
-        //TODO: test if method is called correctly
-        var appointment = createAppointment(message);
+        var appointment = appointments.createAppointment(message);
         //send appointment to request validator for availability check
-        publish(handlerTopic, appointment.toString);
+        publish(handlerTopic, JSON.stringify(appointment));
     }
-    console.log(message.toString());
 })

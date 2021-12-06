@@ -2,10 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var appointmentSchema = new Schema({
-    userid: {type: int},
-    requestid: {type: int},
-    dentistid: {type: int},
-    issuance: {type: int},
+    userid: {type: Number},
+    requestid: {type: Number},
+    dentistid: {type: Number},
+    issuance: {type: Number},
     date: {type: Date}
 });
 
