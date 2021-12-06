@@ -30,6 +30,7 @@ const client = mqtt.connect(options.hostURL, options);
 client.on("connect", function() {
 
     const handlerTopic = topics.bookingHandlerTopic;
+    const GUITopic = topics.frontendTopic;
 
     function subscribe(topic) {
         client.subscribe(topic);
@@ -41,7 +42,7 @@ client.on("connect", function() {
 
     }
 
-    subscribe(handlerTopic);
+    subscribe(GUITopic);
     
     publish(handlerTopic, 'Handle this: ...');
 })
