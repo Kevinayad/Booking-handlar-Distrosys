@@ -21,7 +21,7 @@ const options = {
 	connectTimeout: 30 * 1000,
 	will: {
 		topic: 'WillMsg',
-		payload: 'Connection Closed abnormally..!',
+		payload: 'booking-handler failure',
 		qos: 1,
 		retain: false
 	},
@@ -43,7 +43,7 @@ client.on("connect", function() {
 
     subscribe(GUITopic);
     
-    publish(handlerTopic, 'Handle this: ...');
+    //publish(handlerTopic, 'Handle this: ...');
 })
 
 client.on('message', function(topic, message) {
