@@ -23,7 +23,7 @@ const options = {
 	reconnectPeriod: 1000,
 	connectTimeout: 30 * 1000,
 	will: {
-		topic: 'WillMsg',
+		topic: 'WillMsg12',
 		payload: 'booking-handler failure',
 		qos: 1,
 		retain: false
