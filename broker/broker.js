@@ -2,8 +2,7 @@ const mqtt = require("mqtt");
 const topics = require("./topics");
 const handlerTopic = topics.bookingHandlerTopic;
 const frontendTopic = topics.frontendTopic;
-const appointments = require ('../controllers/appointments.js');
-
+const appointments = require('../controllers/appointments.js');
 const host = "ws://broker.emqx.io:8083/mqtt"
 
 var clientId =
