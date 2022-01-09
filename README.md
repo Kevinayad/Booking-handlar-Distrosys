@@ -21,11 +21,12 @@ This repository additionally contains technologies and/or parts of code licensed
 
 ### Install
 
-1. npm install 
+1. Go to booking-handlar folder
+2. npm install 
 
 ### Running the Booking Handler component
 
-1. node broker.js
+1. npm run dev
 
 ## Development Team
 
