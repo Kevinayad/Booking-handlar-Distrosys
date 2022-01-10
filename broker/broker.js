@@ -32,6 +32,7 @@ const options = {
 const client = mqtt.connect(host, options);
 
 function publish(topic, message) {
+    //console.log(message);
     client.publish(topic, message, { qos: 1, retain:false });
 }
 
@@ -51,6 +52,6 @@ client.on('message', function(topic, message) {
         var appointment = appointments.createAppointment(message);
         //send appointment to request validator for availability check
         publish(handlerTopic, JSON.stringify(appointment));
+        
     }
-    console.log(JSON.parse(message));
 })
