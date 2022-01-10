@@ -1,0 +1,23 @@
+{
+  "name": "booking-handlar",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "./broker/broker.js",
+  "dependencies": {
+    "mongoose": "^6.1.5",
+    "mqtt": "^4.3.4",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node broker.js",
+    "dev": "nodemon broker.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.chalmers.se:courses/dit355/test-teams-formation/team-12/booking-handlar.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
