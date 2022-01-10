@@ -14,8 +14,8 @@ function createAppointment(appointmentData){
     appointmentObj.requestid = 1000 + random,
     appointmentObj.dentistid = appointmentData.dentistid,
     appointmentObj.issuance = 1000000 + random,
-    appointmentObj.date = appointmentData.date
-
+    appointmentObj.date = appointmentData.date.date
+    //console.log(appointmentObj.date);
     //This will check for empty values or type errors
     return new Appointment(appointmentObj);
 }
