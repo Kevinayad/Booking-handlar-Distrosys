@@ -28,6 +28,10 @@ This repository additionally contains technologies and/or parts of code licensed
 
 1. npm run dev
 
+## Component Diagram
+
+![Component Diagram](./Component_Diagram.png)
+
 ## Development Team
 
 * Gianmarco Iachella
