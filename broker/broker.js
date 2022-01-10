@@ -51,9 +51,7 @@ client.on('message', function(topic, message) {
     if (topic == topics.frontendTopic){
         var appointment = appointments.createAppointment(message);
         //send appointment to request validator for availability check
-        console.log(JSON.stringify(appointment));
         publish(handlerTopic, JSON.stringify(appointment));
         
     }
-   // console.log(JSON.parse(message));
 })
